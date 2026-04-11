@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>تهاني المريسي        - سيرة ذاتية احترافية      </title>
+    <!-- Font Awesome 6 (أيقونات متحركة) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: خطوط عصرية -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #e0e7e9 0%, #cbd5d9 100%);
+            font-family: 'Cairo', sans-serif;
+            padding: 40px 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* الحاوية الرئيسية - تصميم بطاقة احترافية */
+        .resume-card {
+            max-width: 1300px;
+            width: 100%;
+            background: #fff;
+            border-radius: 42px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2), 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* شبكة العمودين */
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 34% 66%;
+        }
+
+        /* ========== العمود الأيمن (أخضر داكن) ========== */
+        .right-dark {
+            background-color: #0c3b2f;
+            color: #fef9e8;
+            padding: 2rem 1.8rem;
+            position: relative;
+            overflow-y: auto;
+            backdrop-filter: blur(1px);
+            transition: all 0.2s;
+        }
+
+        /* تزيين خفيف */
+        .right-dark h2, .right-dark h3 {
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            border-right: 4px solid #f4b942;
+            padding-right: 12px;
+            margin-top: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .right-dark h2 {
+            font-size: 1.6rem;
+            margin-top: 0.5rem;
+        }
+
+        .right-dark h3 {
+            font-size: 1.3rem;
+            margin-top: 1.6rem;
+        }
+
+        .right-dark .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .name-title {
+            margin-bottom: 1.2rem;
+        }
+
+        .name-title h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 0.3rem;
+            color: #fff;
+        }
+
+        .name-title .job-tag {
+            background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+
+        .bio-text {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.8rem 1rem;
+            border-radius: 24px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 1rem 0 1rem 0;
+        }
+
+        /* معلومات التواصل مع أيقونات */
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+            word-break: break-word;
+        }
+
+        .contact-info i {
+            width: 28px;
+            font-size: 1.2rem;
+            color: #f4b942;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info i:hover {
+            transform: scale(1.2) translateX(-3px);
+            color: #ffdd88;
+        }
+
+        /* قوائم المهارات والخبرات والتعليم */
+        .skills-list, .exp-list, .edu-list, .lang-list {
+            list-style: none;
+            padding: 0;
+        }
+        .skills-list li, .exp-list li, .edu-list li, .lang-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .skills-list li i, .exp-list li i, .edu-list li i, .lang-list li i {
+            color: #f4b942;
+            font-size: 0.85rem;
+            margin-top: 4px;
+            transition: transform 0.2s;
+        }
+
+        .skills-list li:hover i, .exp-list li:hover i, .edu-list li:hover i, .lang-list li:hover i {
+            transform: rotate(8deg) scale(1.1);
+        }
+
+        /* ========== العمود الأيسر (أبيض) ========== */
+        .left-white {
+            background: #ffffff;
+            padding: 2rem 2rem;
+            overflow-y: auto;
+        }
+
+        .left-white h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0c3b2f;
+            border-right: 5px solid #f4b942;
+            padding-right: 14px;
+            margin-bottom: 1.3rem;
+            margin-top: 0.5rem;
+        }
+
+        /* نماذج الأعمال - بطاقات أنيقة */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .work-card {
+            background: #fef7e8;
+            border-radius: 24px;
+            padding: 1rem 0.8rem;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.03);
+            border: 1px solid #ffe6c7;
+            cursor: pointer;
+        }
+
+        .work-card i {
+            font-size: 2.2rem;
+            color: #0c3b2f;
+            margin-bottom: 8px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .work-card span {
+            display: block;
+            font-weight: 600;
+            color: #2d4a3e;
+            font-size: 0.85rem;
+        }
+
+        .work-card:hover {
+            transform: translateY(-7px);
+            background: #fff4e4;
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .work-card:hover i {
+            transform: scale(1.2) rotate(3deg);
+            color: #f4b942;
+        }
+
+        /* أزرار الإجراءات (تعديل - رابط البريد - اتصال) */
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 2rem 0 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 140px;
+            background: white;
+            border: 2px solid #0c3b2f;
+            padding: 12px 16px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #0c3b2f;
+            background: #fff;
+        }
+
+        .btn-primary {
+            background: #0c3b2f;
+            color: white;
+            border: none;
+        }
+
+        .btn-primary i {
+            color: #f4b942;
+        }
+
+        .btn-outline i {
+            color: #0c3b2f;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:hover {
+            background: #1c5a48;
+        }
+
+        .btn-outline:hover {
+            background: #f0f2f0;
+            border-color: #f4b942;
+        }
+
+        /* أيقونات متحركة داخل الأزرار */
+        .btn i {
+            transition: transform 0.2s;
+        }
+
+        .btn:hover i {
+            transform: translateX(-3px) scale(1.1);
+        }
+        /* مودال التعديل */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 700px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            border-radius: 40px;
+            padding: 25px 30px;
+            direction: rtl;
+            box-shadow: 0 25px 40px rgba(0,0,0,0.3);
+            animation: fadeSlideUp 0.3s ease;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-content h2 {
+            color: #0c3b2f;
+            border-right: 6px solid #f4b942;
+            padding-right: 15px;
+            margin-bottom: 20px;
+        }
+
+        .modal-content label {
+            font-weight: 600;
+            margin-top: 15px;
+            display: block;
+            color: #2c3e2f;
+        }
+
+        .modal-content input, .modal-content textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-family: 'Cairo', sans-serif;
+            background: #fefaf5;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .modal-buttons button {
+            padding: 8px 20px;
+            border-radius: 40px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .save-btn {
+            background: #0c3b2f;
+            color: white;
+        }
+
+        .close-modal {
+            background: #ddd;
+        }
+
+        /* استجابة للشاشات الصغيرة */
+        @media (max-width: 900px) {
+            .resume-grid {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 20px 15px;
+            }
+            .right-dark, .left-white {
+                padding: 1.8rem;
+            }
+        }
+
+        /* تخصيص شريط التمرير */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e2e2;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0c3b2f;
+            border-radius: 10px;
+        }
+
+        /* رابط البريد الخاص + أيقونة */
+        .mail-link {
+            display: inline-flex;
+            align-items: center;
+            background: #f2f2f2;
+            padding: 10px 18px;
+            border-radius: 60px;
+            text-decoration: none;
+            color: #0c3b2f;
+            font-weight: 500;
+            gap: 12px;
+            transition: all 0.3s;
+            margin-left: 15px;
+        }
+
+        .mail-link i {
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .mail-link:hover {
+            background: #0c3b2f;
+            color: white;
+        }
+        .mail-link:hover i {
+            transform: translateX(-4px) rotate(-5deg);
+            color: #f4b942;
+        }
+
+        .flex-btns {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="resume-card">
+    <div class="resume-grid">
+        <!-- العمود الأيمن - أخضر داكن: الاسم، نبذة، تواصل، مهارات، خبرات، تعليم، لغات -->
+         <div class="right-dark">
+            <div class="name-title">
+                <h1 id="fullname">تهاني علي عبد الله أحمد المريسي</h1>
+                <div class="job-tag" id="jobTitle">تقنية معلومات | IT</div>
+            </div>
+            
+            <div class="bio-section">
+                <h3><i class="fas fa-user-edit" style="margin-left: 8px;"></i> نبذة عني</h3>
+                <div class="bio-text" id="bioText">
+                    دبلوم تقنية معلومات IT في المعهد الوطني قيد الدراسة. أسعى في تطوير نفسي علمياً ومعرفياً، أمتلك شغفاً بالتصميم والتحليل والإبداع الرقمي.
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3><i class="fas fa-address-card"></i> معلومات التواصل</h3>
+                <p><i class="fas fa-phone-alt"></i> <span id="phoneNum">770675032</span></p>
+                <p><i class="fas fa-envelope"></i> <span id="emailAddr">dsafcoort@gmail.com</span></p>
+            </div>
+
+            <!-- المهارات -->
+            <div class="skills">
+                <h3><i class="fas fa-cogs"></i> المهارات والقدرات</h3>
+                <ul class="skills-list" id="skillsList">
+                    <li><i class="fas fa-palette"></i> التصميم</li>
+                    <li><i class="fas fa-comments"></i> التفاعل</li>
+                    <li><i class="fas fa-chart-line"></i> التحليل</li>
+                    <li><i class="fas fa-tasks"></i> إدارة الكتب العادية والروابط</li>
+                    <li><i class="fas fa-lightbulb"></i> الإبتكار والإبداع</li>
+                </ul>
+            </div>
+
+            <!-- الخبرات العملية -->
+            <div class="experience">
+                <h3><i class="fas fa-briefcase"></i> الخبرات</h3>
+                <ul class="exp-list" id="expList">
+                    <li><i class="fas fa-pen-fancy"></i> القدرة على كتابة السيرة الذاتية</li>
+                    <li><i class="fas fa-ad"></i> القدرة على تصميم إعلانات</li>
+                    <li><i class="fas fa-file-alt"></i> القدرة على كتابة الاختبارات</li>
+                    <li><i class="fas fa-chalkboard"></i> القدرة على تصميم القيودات في الباوربوينت</li>
+                    <li><i class="fas fa-certificate"></i> القدرة على تصميم شهادات تقدير</li>
+                </ul>
+            </div>
+
+            <!-- التعليم -->
+            <div class="education">
+                <h3><i class="fas fa-graduation-cap"></i> التعليم والمؤهلات</h3>
+                <ul class="edu-list" id="eduList">
+                    <li><i class="fas fa-school"></i> ثانوي - علمي - مدرسة فاطمة الزهراء 2021-2022</li>
+                    <li><i class="fas fa-laptop-code"></i> دبلوم تقنية معلومات IT (قيد الدراسة) - المعهد الوطني</li>
+                    <li><i class="fas fa-desktop"></i> دبلوم الحاسوب - مركز الاستشارات والتنمية - جامعة العلوم والتكنولوجيا 2024</li>
+                    <li><i class="fas fa-heartbeat"></i> دورة الإسعافات الأولية - كلية عدن 2025</li>
+                </ul>
+            </div>
+
+            <!-- اللغات -->
+            <div class="languages">
+                <h3><i class="fas fa-language"></i> اللغات</h3>
+                <ul class="lang-list" id="langList">
+                    <li><i class="fas fa-flag-checkered"></i> اللغة العربية: سيزة (لغة أم)</li>
+                    <li><i class="fas fa-globe"></i> اللغة الإنجليزية: جيدة</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- العمود الأيسر - أبيض: نماذج أعمال + أزرار تعديل + رابط بريد + زر اتصال -->
+        <div class="left-white">
+            <h3><i class="fas fa-th-large"></i> نماذج من أعمالي</h3>
+            <div class="portfolio-grid">
+                <div class="work-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>تصميم إعلانات</span>
+                </div>
+                <div class="work-card">
+                    <i class="fas fa-file-powerpoint"></i>
+                    <span>قيودات بوربوينت</span>
+                </div>
+                <div class="work-card">
+                    <i class="fas fa-medal"></i>
+                    <span>شهادات تقدير</span>
+                </div>
+                <div class="work-card">
+                    <i class="fas fa-pen-ruler"></i>
+                    <span>كتابة اختبارات</span>
+                </div>
+                <div class="work-card">
+                    <i class="fas fa-scroll"></i>
+                    <span>سير ذاتية احترافية</span>
+                </div>
+            </div>
+            
+            <!-- أدوات التعديل والاتصال -->
+            <h3><i class="fas fa-sliders-h"></i> أدوات السيرة التفاعلية</h3>
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="editResumeBtn"><i class="fas fa-edit"></i> تعديل السيرة الذاتية</button>
+            </div>
+            
+            <div class="flex-btns">
+                <a href="mailto:dsafcoort@gmail.com" class="mail-link" id="dynamicMailLink"><i class="fas fa-envelope-open-text"></i> dsafcoort@gmail.com</a>
+                <button class="btn btn-outline" id="contactBtn"><i class="fas fa-phone-alt"></i> اتصل بي</button>
+            </div>
+            
+            <div style="margin-top: 1.5rem; font-size: 0.8rem; color: #777; border-top: 1px dashed #ddd; padding-top: 1rem; text-align: center;">
+                <i class="fas fa-sync-alt" style="animation: spin 2s infinite linear; display: inline-block;"></i> 
+                سيرة ذاتية حيوية | قابلة للتعديل والتحديث
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- مودال تعديل السيرة الذاتية -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <h2><i class="fas fa-pen-nib"></i> تعديل البيانات الشخصية</h2>
+        <form id="editForm">
+            <label>الاسم الكامل:</label>
+            <input type="text" id="editName" placeholder="الاسم">
+
+            <label>المسمى الوظيفي:</label>
+            <input type="text" id="editJob" placeholder="مثال: تقنية معلومات">
+
+            <label>نبذة تعريفية:</label>
+            <textarea id="editBio" rows="3"></textarea>
+
+            <label>رقم الهاتف:</label>
+            <input type="text" id="editPhone">
+
+            <label>البريد الإلكتروني:</label>
+            <input type="email" id="editEmail">
+
+            <label>المهارات (اكتب كل مهارة في سطر منفصل):</label>
+            <textarea id="editSkills" rows="4" placeholder="مثال:&#10;التصميم&#10;التفاعل&#10;التحليل"></textarea>
+
+            <label>الخبرات (اكتب كل خبرة في سطر منفصل):</label>
+            <textarea id="editExp" rows="4" placeholder="مثال:&#10;كتابة السيرة الذاتية&#10;تصميم إعلانات"></textarea>
+
+            <label>المؤهلات التعليمية (سطر لكل مؤهل):</label>
+            <textarea id="editEdu" rows="4"></textarea>
+
+            <label>اللغات (سطر لكل لغة):</label>
+            <textarea id="editLang" rows="3"></textarea>
+
+            <div class="modal-buttons">
+                <button type="button" class="close-modal" id="closeModalBtn">إلغاء</button>
+                <button type="submit" class="save-btn">حفظ التعديلات</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // العناصر الرئيسية القابلة للتحديث
+    const fullnameSpan = document.getElementById('fullname');
+    const jobTitleSpan = document.getElementById('jobTitle');
+    const bioDiv = document.getElementById('bioText');
+    const phoneSpan = document.getElementById('phoneNum');
+    const emailSpan = document.getElementById('emailAddr');
+    const skillsListUl = document.getElementById('skillsList');
+    const expListUl = document.getElementById('expList');
+    const eduListUl = document.getElementById('eduList');
+    const langListUl = document.getElementById('langList');
+    const dynamicMailLink = document.getElementById('dynamicMailLink');
+    const contactButton = document.getElementById('contactBtn');
+    // دوال مساعدة لتحويل النص إلى قائمة <li>
+    function buildListFromText(textareaValue, iconClass = "fas fa-circle") {
+        const lines = textareaValue.split(/\r?\n/).filter(line => line.trim() !== "");
+        const fragment = document.createDocumentFragment();
+        lines.forEach(line => {
+            const li = document.createElement('li');
+            li.innerHTML = <i class="${iconClass}" style="color:#f4b942; font-size:0.8rem;"></i> ${line.trim()};
+            fragment.appendChild(li);
+        });
+        return fragment;
+    }
+
+    // تحديث واجهة السيرة بالكامل من القيم المدخلة
+    function updateResumeUI(data) {
+        fullnameSpan.innerText = data.name;
+        jobTitleSpan.innerText = data.job;
+        bioDiv.innerText = data.bio;
+        phoneSpan.innerText = data.phone;
+        emailSpan.innerText = data.email;
+        // تحديث رابط البريد في العمود الأيسر
+        dynamicMailLink.href = mailto:${data.email};
+        dynamicMailLink.innerHTML = <i class="fas fa-envelope-open-text"></i> ${data.email};
+        
+        // تحديث المهارات
+        skillsListUl.innerHTML = '';
+        const skillsItems = buildListFromText(data.skills, "fas fa-palette");
+        skillsListUl.appendChild(skillsItems);
+        
+        // تحديث الخبرات
+        expListUl.innerHTML = '';
+        const expItems = buildListFromText(data.experience, "fas fa-briefcase");
+        expListUl.appendChild(expItems);
+        
+        // تحديث التعليم
+        eduListUl.innerHTML = '';
+        const eduItems = buildListFromText(data.education, "fas fa-graduation-cap");
+        eduListUl.appendChild(eduItems);
+        
+        // تحديث اللغات
+        langListUl.innerHTML = '';
+        const langItems = buildListFromText(data.languages, "fas fa-language");
+        langListUl.appendChild(langItems);
+    }
+
+    // قراءة القيم الحالية من الواجهة (للتعبئة في المودال)
+    function getCurrentData() {
+        // جمع المهارات الحالية كنص
+        const skillsArr = [];
+        document.querySelectorAll('#skillsList li').forEach(li => {
+            let text = li.innerText.trim();
+            if(text) skillsArr.push(text);
+        });
+        const expArr = [];
+        document.querySelectorAll('#expList li').forEach(li => {
+            let text = li.innerText.trim();
+            if(text) expArr.push(text);
+        });
+        const eduArr = [];
+        document.querySelectorAll('#eduList li').forEach(li => {
+            let text = li.innerText.trim();
+            if(text) eduArr.push(text);
+        });
+        const langArr = [];
+        document.querySelectorAll('#langList li').forEach(li => {
+            let text = li.innerText.trim();
+            if(text) langArr.push(text);
+        });
+
+        return {
+            name: fullnameSpan.innerText,
+            job: jobTitleSpan.innerText,
+            bio: bioDiv.innerText,
+            phone: phoneSpan.innerText,
+            email: emailSpan.innerText,
+            skills: skillsArr.join('\n'),
+            experience: expArr.join('\n'),
+            education: eduArr.join('\n'),
+            languages: langArr.join('\n')
+        };
+    }
+
+    // ملء المودال بالبيانات الحالية
+    function fillModalWithCurrent() {
+        const data = getCurrentData();
+        document.getElementById('editName').value = data.name;
+        document.getElementById('editJob').value = data.job;
+        document.getElementById('editBio').value = data.bio;
+        document.getElementById('editPhone').value = data.phone;
+        document.getElementById('editEmail').value = data.email;
+        document.getElementById('editSkills').value = data.skills;
+        document.getElementById('editExp').value = data.experience;
+        document.getElementById('editEdu').value = data.education;
+        document.getElementById('editLang').value = data.languages;
+    }
+    // حفظ التعديلات من المودال
+    function saveResumeFromModal() {
+        const newData = {
+            name: document.getElementById('editName').value.trim(),
+            job: document.getElementById('editJob').value.trim(),
+            bio: document.getElementById('editBio').value.trim(),
+            phone: document.getElementById('editPhone').value.trim(),
+            email: document.getElementById('editEmail').value.trim(),
+            skills: document.getElementById('editSkills').value,
+            experience: document.getElementById('editExp').value,
+            education: document.getElementById('editEdu').value,
+            languages: document.getElementById('editLang').value,
+        };
+        if(newData.name === "") newData.name = "تهاني علي المريسي";
+        if(newData.job === "") newData.job = "تقنية معلومات";
+        if(newData.bio === "") newData.bio = "دبلوم تقنية معلومات IT في المعهد الوطني قيد الدراسة. أسعى لتطوير نفسي.";
+        if(newData.phone === "") newData.phone = "770675032";
+        if(newData.email === "") newData.email = "dsafcoort@gmail.com";
+        
+        updateResumeUI(newData);
+        closeModal();
+        // إظهار رسالة منبثقة لطيفة (اختياري)
+        showTemporaryToast();
+    }
+
+    function showTemporaryToast() {
+        // رسالة صغيرة عائمة
+        let toast = document.createElement('div');
+        toast.innerText = '✓ تم تحديث السيرة الذاتية بنجاح';
+        toast.style.position = 'fixed';
+        toast.style.bottom = '20px';
+        toast.style.left = '50%';
+        toast.style.transform = 'translateX(-50%)';
+        toast.style.backgroundColor = '#0c3b2f';
+        toast.style.color = '#fff';
+        toast.style.padding = '12px 24px';
+        toast.style.borderRadius = '50px';
+        toast.style.fontWeight = 'bold';
+        toast.style.zIndex = '1100';
+        toast.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
+        toast.style.direction = 'rtl';
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            setTimeout(() => toast.remove(), 500);
+        }, 2000);
+    }
+
+    // التحكم في المودال
+    const modal = document.getElementById('editModal');
+    function openModal() {
+        fillModalWithCurrent();
+        modal.style.display = 'flex';
+    }
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // زر الاتصال (يتصل بالبريد أو رقم الهاتف)
+    contactButton.addEventListener('click', () => {
+        const phoneNumber = phoneSpan.innerText.replace(/\s/g, '');
+        if(phoneNumber) {
+            window.location.href = tel:${phoneNumber};
+        } else {
+            alert('لا يوجد رقم هاتف محدد');
+        }
+    });
+
+    // ربط الأحداث
+    document.getElementById('editResumeBtn').addEventListener('click', openModal);
+    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+    document.getElementById('editForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        saveResumeFromModal();
+    });
+    window.addEventListener('click', (e) => {
+        if(e.target === modal) closeModal();
+    });
+
+    // أيقونة تدوير (spin) لأيقونة حيوية
+    const style = document.createElement('style');
+    style.textContent = @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } };
+    document.head.appendChild(style);
+    
+    // إضافة أيقونات متحركة إضافية للأزرار والبطاقات مسبقًا (تمت بالـ css)
+    // تعديل السيرة يتضمن القدرة على تحديث جميع المحتويات بشكل ديناميكي
+    
+    // إعدادات أولية - التأكد من توافق الرابط مع البريد الحالي
+    dynamicMailLink.href = mailto:${emailSpan.innerText};
+    dynamicMailLink.innerHTML = <i class="fas fa-envelope-open-text"></i> ${emailSpan.innerText};
+
+    // إضافة تأثير تحريك إضافي لأيقونات التواصل
+    const contactIcons = document.querySelectorAll('.contact-info i');
+    contactIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', () => {
+            icon.style.animation = 'shake 0.4s ease';
+        });
+        icon.addEventListener('animationend', () => {
+            icon.style.animation = '';
+        });
+    });
+    // إضافة keyframes للاهتزاز
+    const shakeKeyframes = 
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-3px); }
+        75% { transform: translateX(3px); }
+        100% { transform: translateX(0); }
+    };
+    const styleShake = document.createElement('style');
+    styleShake.textContent = shakeKeyframes;
+    document.head.appendChild(styleShake);
+</script>
+</body>
+</html>
